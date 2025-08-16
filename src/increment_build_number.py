@@ -13,6 +13,8 @@ def increment_build_number(plist_path, gradle_path):
     with open(plist_path, 'wb') as plist_file:
         plistlib.dump(plist_data, plist_file)
 
+    print(f"Updated iOS build number from {current_build_number} to {new_build_number} in {plist_path}")
+
     # Increment build number in build.gradle
     with open(gradle_path, 'r') as gradle_file:
         gradle_content = gradle_file.read()
@@ -26,6 +28,8 @@ def increment_build_number(plist_path, gradle_path):
 
     with open(gradle_path, 'w') as gradle_file:
         gradle_file.write(new_gradle_content)
+
+    print(f"Updated Android build number to {new_build_number} in {gradle_path}")
 
 if __name__ == "__main__":
     increment_build_number('./ios/App/App/Info.plist', './android/app/build.gradle')
