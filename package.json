@@ -1,0 +1,14 @@
+{
+  "name": "build-number-incrementer",
+  "version": "1.0.0",
+  "description": "A script to increment build numbers in Info.plist and build.gradle",
+  "bin": {
+    "increment-build-number": "./src/increment_build_number.py"
+  },
+  "scripts": {
+    "start": "python3 ./src/increment_build_number.py"
+  },
+  "keywords": ["build", "automation", "increment", "plist", "gradle"],
+  "author": "Your Name",
+  "license": "MIT"
+}
