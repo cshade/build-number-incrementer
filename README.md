@@ -1,6 +1,6 @@
 # Build Number Incrementer
 
-This project provides a Python script to automate the process of incrementing the build number in both `Info.plist` and `build.gradle` files. This is particularly useful for developers who need to manage versioning in their applications efficiently.
+This project provides a Python script to automate the process of incrementing the build number in both `Info.plist` and `build.gradle` files. This is useful for developers who do not have an automated pipeline utility that manages their versioning and so they manually bump the build number for incremental deployments to Apple and Google.
 
 ## Project Structure
 
@@ -8,6 +8,7 @@ This project provides a Python script to automate the process of incrementing th
 build-number-incrementer
 ├── src
 │   ├── increment_build_number.py
+├── package.json
 ├── requirements.txt
 └── README.md
 ```
@@ -20,17 +21,38 @@ build-number-incrementer
    cd build-number-incrementer
    ```
 
-2. Install the required dependencies:
+2. Install the required Python dependencies:
    ```
    pip install -r requirements.txt
    ```
 
+3. Set up the project as a global npm package using `npm link`:
+   ```
+   npm link
+   ```
+
+   This will make the `increment-build-number` command globally available on your system.
+
 ## Usage
 
-To increment the build number, run the following command in your terminal:
+To increment the build number, navigate to the root of your project (the one containing `Info.plist` and `build.gradle`) and run:
 
 ```
-python src/increment_build_number.py
+increment-build-number ./ios/App/App/Info.plist ./android/app/build.gradle
+```
+
+Or add an npm script to your `package.json`:
+```
+{
+  "scripts": {
+    "increment-build": "increment-build-number ../ios/App/App/Info.plist ../android/app/build.gradle"
+  }
+}
+```
+
+And then run the script:
+```
+npm run increment-build
 ```
 
 This script will:
@@ -40,7 +62,8 @@ This script will:
 
 ## Requirements
 
-Make sure you have Python installed on your machine. The script may require additional libraries for XML and Gradle file manipulation, which are listed in `requirements.txt`.
+- **Python**: Make sure Python is installed on your machine.
+- **Node.js**: Required for the `npm link` setup.
 
 ## Contributing
 
