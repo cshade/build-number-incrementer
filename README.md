@@ -8,6 +8,8 @@ This project provides a Python script to automate the process of incrementing th
 build-number-incrementer
 ├── src
 │   ├── increment_build_number.py
+├── tests
+│   ├── test_increment_build_number.py
 ├── package.json
 ├── requirements.txt
 └── README.md
