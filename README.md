@@ -60,6 +60,24 @@ This script will:
 - Increment the build number by 1.
 - Write the updated build number back to both files.
 
+## Running Tests
+
+This project uses [pytest](https://pytest.org/) for unit testing. All tests are located in the `tests/` folder.
+
+To run all tests, use:
+
+```bash
+pytest
+```
+
+If you need to install pytest, run:
+
+```bash
+pip install -r requirements.txt
+```
+
+Test files are named with the pattern `test_*.py` and cover the main functionality of the scripts in `src/`.
+
 ## Requirements
 
 - **Python**: Make sure Python is installed on your machine.
