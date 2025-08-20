@@ -15,6 +15,11 @@ build-number-incrementer
 └── README.md
 ```
 
+## Requirements
+
+- **Python**: Make sure Python is installed on your machine.
+- **Node.js**: Required for the `npm link` setup.
+
 ## Installation
 
 1. Clone the repository to your local machine:
@@ -85,11 +90,6 @@ pip install -r requirements.txt
 ```
 
 Test files are named with the pattern `test_*.py` and cover the main functionality of the scripts in `src/`.
-
-## Requirements
-
-- **Python**: Make sure Python is installed on your machine.
-- **Node.js**: Required for the `npm link` setup.
 
 ## Contributing
 
