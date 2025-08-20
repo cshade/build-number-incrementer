@@ -4,7 +4,7 @@ This project provides a Python script to automate the process of incrementing th
 
 ## Project Structure
 
-```
+```text
 build-number-incrementer
 ├── src
 │   ├── increment_build_number.py
@@ -16,33 +16,37 @@ build-number-incrementer
 ## Installation
 
 1. Clone the repository to your local machine:
-   ```
-   git clone <repository-url>
-   cd build-number-incrementer
-   ```
 
-2. Install the required Python dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+```bash
+git clone <repository-url>
+cd build-number-incrementer
+```
 
-3. Set up the project as a global npm package using `npm link`:
-   ```
-   npm link
-   ```
+1. Install the required Python dependencies:
 
-   This will make the `increment-build-number` command globally available on your system.
+```bash
+pip install -r requirements.txt
+```
+
+1. Set up the project as a global npm package using `npm link`:
+
+```bash
+npm link
+```
+
+This will make the `increment-build-number` command globally available on your system.
 
 ## Usage
 
 To increment the build number, navigate to the root of your project (the one containing `Info.plist` and `build.gradle`) and run:
 
-```
+```bash
 increment-build-number ./ios/App/App/Info.plist ./android/app/build.gradle
 ```
 
 Or add an npm script to your `package.json`:
-```
+
+```json
 {
   "scripts": {
     "increment-build": "increment-build-number ../ios/App/App/Info.plist ../android/app/build.gradle"
@@ -51,11 +55,13 @@ Or add an npm script to your `package.json`:
 ```
 
 And then run the script:
-```
+
+```bash
 npm run increment-build
 ```
 
 This script will:
+
 - Read the current build number from `Info.plist` and `build.gradle`.
 - Increment the build number by 1.
 - Write the updated build number back to both files.
