@@ -6,7 +6,8 @@
     "increment-build-number": "./src/increment_build_number.py"
   },
   "scripts": {
-    "start": "python3 ./src/increment_build_number.py",    "test": "pytest tests"
+    "start": "python3 ./src/increment_build_number.py",
+    "test": "pytest tests"
   },
   "keywords": ["build", "automation", "increment", "plist", "gradle"],
   "author": "Your Name",
