@@ -45,10 +45,10 @@ This will make the `increment-build-number` command globally available on your s
 
 ## Usage
 
-To increment the build number, navigate to the root of your project (the one containing `Info.plist` and `build.gradle`) and run:
+To increment the build number, given that the script assumes the relative paths, navigate to the root of your project (the one containing `Info.plist` and `build.gradle`) and run:
 
 ```bash
-increment-build-number ./ios/App/App/Info.plist ./android/app/build.gradle
+increment-build-number
 ```
 
 Or add an npm script to your `package.json`:
@@ -56,7 +56,7 @@ Or add an npm script to your `package.json`:
 ```json
 {
   "scripts": {
-    "increment-build": "increment-build-number ../ios/App/App/Info.plist ../android/app/build.gradle"
+    "increment-build": "increment-build-number"
   }
 }
 ```
