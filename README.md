@@ -94,3 +94,7 @@ Test files are named with the pattern `test_*.py` and cover the main functionali
 ## Contributing
 
 Feel free to submit issues or pull requests if you have suggestions or improvements for the project.
+
+## License
+
+MIT
