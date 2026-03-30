@@ -3,6 +3,12 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Python packaging artifacts
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
 # macOS system files
 .DS_Store
 
