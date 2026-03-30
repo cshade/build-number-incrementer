@@ -11,14 +11,14 @@ build-number-incrementer
 ├── tests
 │   ├── test_increment_build_number.py
 ├── package.json
-├── requirements.txt
+├── pyproject.toml
 └── README.md
 ```
 
 ## Requirements
 
-- **Python**: Make sure Python is installed on your machine.
-- **Node.js**: Required for the `npm link` setup.
+- **Python**: Make sure Python 3.8+ is installed on your machine.
+- **Node.js**: Required for the `npm link` setup (for the JS wrapper/CLI in this repo).
 
 ## Installation
 
@@ -29,13 +29,14 @@ git clone <repository-url>
 cd build-number-incrementer
 ```
 
-1. Install the required Python dependencies:
+2. Install the Python package and dev dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -e .
+pip install -e .[dev]
 ```
 
-1. Set up the project as a global npm package using `npm link`:
+3. (Optional) Set up the project as a global npm package using `npm link`:
 
 ```bash
 npm link
@@ -83,10 +84,10 @@ To run all tests, use:
 pytest
 ```
 
-If you need to install pytest, run:
+If needed, install pytest from pyproject dev deps:
 
 ```bash
-pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
 Test files are named with the pattern `test_*.py` and cover the main functionality of the scripts in `src/`.

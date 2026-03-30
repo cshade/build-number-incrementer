@@ -31,5 +31,17 @@ def increment_build_number(plist_path, gradle_path):
 
     print(f"Updated Android build number to {new_build_number} in {gradle_path}")
 
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Increment iOS and Android build numbers')
+    parser.add_argument('--plist', default='./ios/App/App/Info.plist', help='Path to Info.plist')
+    parser.add_argument('--gradle', default='./android/app/build.gradle', help='Path to build.gradle')
+    args = parser.parse_args()
+
+    increment_build_number(args.plist, args.gradle)
+
+
 if __name__ == "__main__":
-    increment_build_number('./ios/App/App/Info.plist', './android/app/build.gradle')
+    main()
