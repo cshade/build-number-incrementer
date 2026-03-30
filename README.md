@@ -36,7 +36,13 @@ pip install -e .
 pip install -e .[dev]
 ```
 
-3. (Optional) Set up the project as a global npm package using `npm link`:
+3. Install the Git hooks:
+
+```bash
+pre-commit install
+```
+
+4. (Optional) Set up the project as a global npm package using `npm link`:
 
 ```bash
 npm link
@@ -91,6 +97,25 @@ pip install -e .[dev]
 ```
 
 Test files are named with the pattern `test_*.py` and cover the main functionality of the scripts in `src/`.
+
+## Code Quality
+
+This project uses [pre-commit](https://pre-commit.com/) with a minimal Python hook set:
+
+- `ruff check --fix` for linting and import cleanup
+- `ruff format` for formatting
+
+Run the full hook suite locally with:
+
+```bash
+pre-commit run --all-files
+```
+
+If you only want to run the Python test suite:
+
+```bash
+pytest
+```
 
 ## Contributing
 

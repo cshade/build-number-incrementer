@@ -16,7 +16,9 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = [
+  "pre-commit>=4.5.0",
   "pytest>=7.0.0",
+  "ruff>=0.15.0",
 ]
 
 [project.scripts]
@@ -30,3 +32,9 @@ py-modules = ["increment_build_number"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
